@@ -20,7 +20,9 @@ namespace Azure.AD.WebApi
             Host.CreateDefaultBuilder(args)
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
-                    webBuilder.UseStartup<Startup>();
+                    webBuilder
+                    .UseUrls("http://*:9021")
+                    .UseStartup<Startup>();
                 });
     }
 }
